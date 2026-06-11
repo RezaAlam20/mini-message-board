@@ -4,13 +4,10 @@
 <body>
   <h1>Mini Message Board</h1>
 
-  <% messages.forEach((message) => { %>
+  <% rows.forEach((row) => { %>
     <div class="message">
-      <div class="message-user"><%= message.user %></div>
-      <p><%= message.text %></p>
-      <div class="message-date">
-        <%= message.added.toLocaleString() %>
-      </div>
+      <div class="message-user"><%= row.username %></div>
+      <p><%= row.message %></p>
     </div>
   <% }) %>
 
