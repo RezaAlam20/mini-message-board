@@ -13,7 +13,7 @@ const validator = [
   body("messageUser")
     .trim()
     .isLength({ min: 1, max: 20 })
-    .isAlpha()
+    .isAlpha("en-US", { ignore: " " })
     .withMessage("name should be alphabet and between 1 to 20 characters"),
   body("messageText")
     .trim()
