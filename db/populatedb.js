@@ -1,7 +1,7 @@
 require("dotenv").config();
 const { Client } = require("pg");
 
-const db_url = process.env.db_url;
+const db_url = process.env.DATABASE_URL || process.env.db_url;
 
 const SQL = `CREATE TABLE IF NOT EXISTS usernames(
      id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
