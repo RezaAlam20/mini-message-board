@@ -2,15 +2,11 @@ require("dotenv").config();
 const { Client } = require("pg");
 
 const db_url = process.env.db_url;
-console.log(db_url);
 
 const SQL = `CREATE TABLE IF NOT EXISTS usernames(
      id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
   username VARCHAR ( 255 ), message VARCHAR (255) );
-  
-  INSERT INTO usernames(username , message)
-  VALUES 
-    ('reza' , 'hello guys');`;
+`;
 
 async function main() {
   const client = new Client({
@@ -23,3 +19,7 @@ async function main() {
 }
 
 main();
+
+module.exports = {
+  main,
+};
