@@ -6,5 +6,5 @@ const indexRouter = Router();
 indexRouter.get("/", controller.usersGET);
 indexRouter.get("/new", controller.formGet);
 
-indexRouter.post("/new", controller.formPost);
+indexRouter.post("/new", controller.validator, controller.formPost);
 module.exports = indexRouter;
